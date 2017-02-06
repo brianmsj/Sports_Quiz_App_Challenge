@@ -3,21 +3,24 @@
 <head>
  <title>Sports Quiz App</title>
  <meta name="Sports Quiz App" content="The sports quiz is where you can answer questions about various sports topics">
- <link href="https://fonts.google.com/css?family=Roboto:400,700" rel="stylesheet"/>
  <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
- <header>
+ <header class="home-screen">
    <h1 class="main-header">Sports Quiz</h1>
    <h3 class="intro-header"> Welcome to the Sports Quiz. This quiz contains questions on various sports topics</h3>
 </header>
 <main>
-   <img src = "" class="title-image">
-   <button class = "start-quiz">Start Quiz</button>
+  <section class="home-screen">
+    <img src = "" class="title-image">
+    <button class = "start-quiz">Start Quiz</button>
+  </section>
+
 <section class = "questions-answers hidden">
-   <h2 class = "counter-header">Question<span class = "current-question"></span>of 10</h2>
+   <h2 class = "counter-header">Question <span class = "current-question"></span>of 10</h2>
    <p class = "question"></p>
 </section>
+
 <section class = "multiple-choice hidden">
   <ul>
     <li>
@@ -36,7 +39,15 @@
 <p class = "counter-bottom">You got<span class = "correct-answer"></span>out of 10 correct!</p>
 </section>
 
+<section class="overall-score-screen hidden">
+  <h2>You Finished The Quiz!</h2>
+  <p><span class="correct-answer"></span> out of 10 questions correct!</p>
+  <h4>Try Again?</h4>
 
+  <div>
+    <button class="replay-quiz">Yes!</button>
+  </div>
+</section>
 
 </main>
 
@@ -45,4 +56,5 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 crossorigin="anonymous"></script>
+<script type="text/javascript" src="app.js"></script>
 </html>
