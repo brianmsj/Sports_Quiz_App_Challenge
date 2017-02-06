@@ -9,25 +9,42 @@ var questionObjects = [
   {
     question: "How many players on a basketball roster?",
     Choices: ['5', '7', '12', '10'],
-    answer: "12",
+    answer: 2,
   },
 ]
 
+// create z-index answer box when a player answers a question.
 
+var currentQuestion = 0;
 
 var state = {
   questions: questionObjects,
+
+  correctAnswer: function(choice) {
+    var question = state.questions[0].Choices;
+
+    if (question[choice] === question[state.questions[0].answer]) {
+      alert('You got it right');
+    } else {
+      alert('you got it wrong');
+    }
+    currentQuestion += 1;
+
+  },
+  
+
 }
 
+
 // write down all the numbers in choices, see if they are equal to answer: 12
-function correctAnswer(state) {
-  var correctAnswer = state.questions[0].answer[0];
-  for (var i = 0; i < state.questions[0].Choices.length; i++) {
-      if (state.questions.Choices[i] === correctAnswer) {
-        return correctAnswer;
-      }
-  }
-};
+// function correctAnswer(state) {
+//   var correctAnswer = state.questions[0].answer[0];
+//   for (var i = 0; i < state.questions[0].Choices.length; i++) {
+//       if (state.questions.Choices[i] === correctAnswer) {
+//         return correctAnswer;
+//       }
+//   }
+// };
 // display elements functions
 
 function initialDisplay (state) {
@@ -48,20 +65,31 @@ function initializeEventListeners() {
     $('.questions-answers').removeClass('hidden');
     initialDisplay(state);
   });
-  $('.multiple-choice').on('click, top-left-button', function (){
-    $('')
+  $('.multiple-choice').on('click', '.top-left-button', function (){
+    choice = 0;
+    state.correctAnswer(choice);
 
   });
-  // $('.multiple-choice').on('click, bottom-left-button' function (){
-  //
-  // }$('.multiple-choice').on('click, bottom-right-button' function (){
-  //
-  // }$('.multiple-choice').on('click, top-right-button' function (){
+
+  $('.multiple-choice').on('click', '.bottom-left-button', function (){
+    choice = 1;
+    state.correctAnswer(choice);
+  });
+  
+  $('.multiple-choice').on('click', '.bottom-right-button', function (){
+    choice = 2;
+    state.correctAnswer(choice);
+  });
+  
+  $('.multiple-choice').on('click', '.top-right-button', function (){
+    choice = 3;
+    state.correctAnswer(choice);
+  });
 
 }
 
 $(function() {
   initializeEventListeners();
-  console.log(correctAnswer(state));
+  // console.log(correctAnswer(state));
 
 });
