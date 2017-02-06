@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .hidden {
   display: none;
 }
@@ -16,10 +20,6 @@
   margin: 0 auto;
 }
 
-.correct h2 {
-
-}
-
 .wrong {
   position: absolute;
   z-index: 5;
@@ -36,4 +36,156 @@
 
 li {
   list-style: none;
+}
+
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+.start-quiz-button {
+  border-radius: 10%;
+}
+
+div {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.image-container {
+  width: 375px;
+  margin: 50px auto;
+}
+
+.image-container img {
+  border-radius: 25px;
+}
+
+img {
+  height: auto;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}
+
+.start-quiz {
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  background-color: #7892c2;
+  border-radius: 10px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 19px;
+  padding: 12px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
+}
+.start-quiz:hover {
+  background-color:#476e9e;
+}
+.start-quiz:active {
+  position:relative;
+  top:1px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 40px;
+  background-color: blue;
+}
+
+/* ||||||||||||||||||||||||||||||||||||| */
+
+section {
+  width: 600px;
+}
+
+.questions-answers h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.questions-answers p {
+  font-size: 24px;
+  text-align: center;
+}
+
+.multiple-choice li {
+  display: inline-block;
+  margin: 20px 20px;
+}
+
+.multiple-choice button {
+  width: 200px;
+  height: 150px;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  background-color: #7892c2;
+  border-radius: 10px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 19px;
+  padding: 12px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
+}
+
+.multiple_choice button:hover {
+  background-color: #476e9e;
+}
+
+.counter-bottom {
+  margin-top: 25px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.overall-score-screen {
+  text-align: center;
+}
+
+.overall-score-screen h2 {
+  font-size: 40px;
+}
+
+.overall-score-screen p {
+  font-size: 24px;
+}
+
+.overall-score-screen h4 {
+  font-size: 18px;
+}
+
+.button-container {
+  width: 600px;
+}
+
+.overall-score-screen button {
+  width: 200px;
+  height: 150px;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  background-color: #7892c2;
+  border-radius: 10px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 19px;
+  padding: 12px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
 }

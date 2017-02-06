@@ -43,10 +43,7 @@ var state = {
 
   correctAnswer: function(choice) {
     var question = state.questions[currentQuestion].Choices;
-    if (currentQuestion + 1 === state.questions.length) {
-        finalDisplay(state);
-
-    }
+    
 
     if (question[choice] === question[state.questions[currentQuestion].answer]) {
       correctQuestion += 1
@@ -54,6 +51,14 @@ var state = {
     } else {
       wrongAnswerDisplay();
     }
+
+    if (currentQuestion + 1 === state.questions.length) {
+      setTimeout(function() {
+        finalDisplay(state);
+      }, 2000);
+
+    }
+
     setTimeout(function() {
       currentQuestion += 1;
       initialDisplay(state);
