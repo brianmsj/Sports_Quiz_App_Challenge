@@ -35,27 +35,28 @@ var questionObjects = [
 
 // create z-index answer box when a player answers a question.
 
-var currentQuestion = 0;
-var correctQuestion = 0;
+
 
 var state = {
+  currentQuestion: 0,
+  correctQuestion: 0,
   questions: questionObjects,
 
   correctAnswer: function(choice) {
-    var question = state.questions[currentQuestion].Choices;
-    if (currentQuestion + 1 === state.questions.length) {
+    var question = state.questions[state.currentQuestion].Choices;
+    if (state.currentQuestion + 1 === state.questions.length) {
         finalDisplay(state);
-
+        return;
     }
 
-    if (question[choice] === question[state.questions[currentQuestion].answer]) {
-      correctQuestion += 1
+    if (question[choice] === question[state.questions[state.currentQuestion].answer]) {
+      state.correctQuestion += 1
       correctAnswerDisplay();
     } else {
       wrongAnswerDisplay();
     }
     setTimeout(function() {
-      currentQuestion += 1;
+      state.currentQuestion += 1;
       initialDisplay(state);
     }, 2000);
   },
@@ -76,22 +77,22 @@ function wrongAnswerDisplay() {
 
 function initialDisplay (state) {
    state.questions[0]
-   $('.question').text(state.questions[currentQuestion].question);
-   $('.answer-a').text(state.questions[currentQuestion].Choices[0]);
-   $('.answer-b').text(state.questions[currentQuestion].Choices[1]);
-   $('.answer-c').text(state.questions[currentQuestion].Choices[2]);
-   $('.answer-d').text(state.questions[currentQuestion].Choices[3]);
-   $('.current-question').text(currentQuestion + 1);
-   $('.correct-answer').text(correctQuestion);
-   $('.current-question-footer').text(currentQuestion);
+   $('.question').text(state.questions[state.currentQuestion].question);
+   $('.answer-a').text(state.questions[state.currentQuestion].Choices[0]);
+   $('.answer-b').text(state.questions[state.currentQuestion].Choices[1]);
+   $('.answer-c').text(state.questions[state.currentQuestion].Choices[2]);
+   $('.answer-d').text(state.questions[state.currentQuestion].Choices[3]);
+   $('.current-question').text(state.currentQuestion + 1);
+   $('.correct-answer').text(state.correctQuestion);
+   $('.current-question-footer').text(state.currentQuestion);
 }
 
 function finalDisplay (state) {
    $('.multiple-choice').addClass('hidden');
    $('.questions-answers').addClass('hidden');
    $('.overall-score-screen').removeClass('hidden');
-   $('.correct-answer').text(correctQuestion);
-   $('.current-question-footer').text(currentQuestion + 1);
+   $('.correct-answer').text(state.correctQuestion);
+   $('.current-question-footer').text(state.currentQuestion + 1);
 }
 
 function resetDisplay (state) {
@@ -131,8 +132,8 @@ function initializeEventListeners() {
   });
 
   $('.replay-quiz').click(function () {
-     currentQuestion = 0;
-     correctQuestion = 0;
+     state.currentQuestion = 0;
+     state.correctQuestion = 0;
      resetDisplay(state);
      initialDisplay(state);
   });

@@ -2,13 +2,18 @@
   display: none;
 }
 
+body {
+  font-family:"Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+  line-height:   //determines what an em is
+}
+
 .correct {
   position: absolute;
   z-index: 5;
   right: 5%;
   left: 5%;
   background-color: green;
-  font-size: 25px;
+  font-size: 25em;
   width: 400px;
   height: 400px;
   text-align: center;
@@ -36,4 +41,27 @@
 
 li {
   list-style: none;
+}
+
+button {
+  height: 200px;
+  width: 200px;
+}
+
+
+.answer-a{
+  font-size: 35px;
+
+}
+.answer-b{
+  font-size: 35px;
+
+}
+.answer-c{
+  font-size: 35px;
+
+}
+.answer-d{
+  font-size: 35px;
+
 }
