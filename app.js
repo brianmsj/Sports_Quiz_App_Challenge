@@ -91,7 +91,7 @@ function initialDisplay (state) {
    $('.current-question-footer').text(currentQuestion);
 }
 
-function finalDisplay (state) {
+function finalDisplay() {
    $('.multiple-choice').addClass('hidden');
    $('.questions-answers').addClass('hidden');
    $('.overall-score-screen').removeClass('hidden');
@@ -99,7 +99,7 @@ function finalDisplay (state) {
    $('.current-question-footer').text(currentQuestion + 1);
 }
 
-function resetDisplay (state) {
+function resetDisplay() {
   $('.multiple-choice').removeClass('hidden');
   $('.questions-answers').removeClass('hidden');
   $('.overall-score-screen').addClass('hidden');
@@ -107,7 +107,6 @@ function resetDisplay (state) {
 
 
 function initializeEventListeners() {
-
   $('.start-quiz').click(function() {
     $('.home-screen').addClass('hidden');
     $('.multiple-choice').removeClass('hidden');
@@ -141,12 +140,10 @@ function initializeEventListeners() {
      resetDisplay(state);
      initialDisplay(state);
   });
-
-
 }
+
 
 $(function() {
   initializeEventListeners();
-  // console.log(correctAnswer(state));
 
 });
