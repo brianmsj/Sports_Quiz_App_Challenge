@@ -47,9 +47,11 @@ var state = {
 
     if (question[choice] === question[state.questions[currentQuestion].answer]) {
       correctQuestion += 1
+      disableButton();
       correctAnswerDisplay();
     } else {
       wrongAnswerDisplay();
+      disableButton();
     }
 
     if (currentQuestion + 1 === state.questions.length) {
@@ -65,6 +67,14 @@ var state = {
     }, 2000);
   },
 
+}
+
+function disableButton() {
+  console.log('hello');
+  $('button').attr('disabled',"disabled");
+  setTimeout(function() {
+    $('button').removeAttr('disabled');
+  }, 1500);
 }
 
 // z-box-index displays;

@@ -7,8 +7,10 @@
 }
 
 .correct {
+  border-radius: 50%;
   position: absolute;
   z-index: 5;
+  top: 25%;
   right: 5%;
   left: 5%;
   background-color: green;
@@ -20,9 +22,20 @@
   margin: 0 auto;
 }
 
+.correct h2,
+.wrong h2 {
+  position: absolute;
+  top: 33%;
+  right: 5%;
+  left: 5%;
+
+}
+
 .wrong {
+  border-radius: 50%;
   position: absolute;
   z-index: 5;
+  top: 25%;
   right: 5%;
   left: 5%;
   background-color: red;
@@ -151,8 +164,6 @@ section {
   background-color:#1a75ff;
   margin: 0px;
   border-radius: 20%;
-
-
 }
 
 .counter-bottom {
@@ -181,6 +192,10 @@ section {
   width: 600px;
 }
 
+.counter-bottom {
+  color: white;
+}
+
 .overall-score-screen button {
   width: 200px;
   height: 150px;
@@ -204,15 +219,19 @@ ul {
 
 }
 
-.bottom-image-container {
+/*.bottom-image-container {
+  position: relative;
 }
 
 .bottom-image {
-  display: block;
+  position: absolute;
   margin: auto;
   height: 400px;
   width: 300px;
+  top: 5%;
+  right: -100px;
+  left: ;
 
 
 
-}
+}*/
